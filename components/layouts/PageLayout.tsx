@@ -1,17 +1,17 @@
 import Head from "next/head";
-import Navigation from "./Navigation";
 
 interface Props {
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
+  title?: string;
 }
-function PageLayout({ children }: Props) {
+function PageLayout({ children, title = "Brayan Forero" }: Props) {
   return (
     <>
       <Head>
-        <title>Brayan Forero</title>
+        <title>{title}</title>
       </Head>
-      <Navigation />
-      <body>{children}</body>
+      {/* TODO: NAVIGATION */}
+      <main>{children}</main>
     </>
   );
 }
